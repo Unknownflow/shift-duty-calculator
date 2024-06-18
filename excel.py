@@ -91,10 +91,11 @@ with open("time.csv", newline="", encoding='utf-8-sig') as csvfile:
 with open("result.csv", "w") as writefile:
   for date_key in scores_list_date.keys():
     writefile.write(date_key + "\n")
+
     for name_key in scores_list_date[date_key].keys():
       # if person cannot be found
       if name_key not in scores_list_date[curr_date]:
         continue
 
       # data in the format: name, night duty timing, night duty score
-      writefile.write(name_key + "," + scores_list_date[curr_date][name_key][1] + "," + str(scores_list_date[curr_date][name_key][0]) + "\n")
+      writefile.write(name_key + "," + scores_list_date[date_key][name_key][1] + "," + str(scores_list_date[date_key][name_key][0]) + "\n")
